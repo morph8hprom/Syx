@@ -1,6 +1,7 @@
 #!/usr/bin/env/ python3
 
 import json
+import os
 
 class Room():
     def __init__(
