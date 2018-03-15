@@ -17,13 +17,20 @@ class CharacterAttributesTestCase(unittest.TestCase):
         os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
         start_id = 1
         num_of_char = 3
-        chars = {}
+        self.chars = {}
         for i in range(start_id, num_of_char):
-            chars[i] = build_char(i)
+            self.chars[i] = build_char(i)
+
 
     def test_char_has_name(self):
         start_id = 1
         num_of_char = 3
         for i in range(start_id, num_of_char):
-            att = hasattr(chars[i], 'name')
+            att = hasattr(self.chars[i], 'name')
             self.assertTrue(att)
+    def test_char_name_is_string(self):
+        start_id = 1
+        num_of_char = 3
+        for i in range(start_id, num_of_char):
+            att = self.chars[i].name
+            self.assertIsInstance(att, str)
