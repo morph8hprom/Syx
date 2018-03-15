@@ -13,8 +13,7 @@ class CharacterAttributesTestCase(unittest.TestCase):
 
     def setUp(self):
         """
-        Uses build_char function to create temporary character instance
-        for testing purposes
+        Uses build_char function to test character data
         """
         os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
 
