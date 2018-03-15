@@ -1,7 +1,9 @@
 #!/usr/bin/env/ python3
 
 import json
-
+"""
+Defines a room class and a fucntion used to create an instance of room class
+"""
 class Room():
     def __init__(
         self,

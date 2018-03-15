@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 import json
-
+"""
+Defines a character class and a fucntion used to create an instance of character class
+"""
 class Character():
     def __init__(
         self,
