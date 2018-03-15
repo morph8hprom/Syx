@@ -27,3 +27,10 @@ def build_item(id, num_of_items):
         item = Item(**d)
         print("Successfully created item {} of {}".format(str(id), num_of_items))
         return item
+
+
+def item_list(id, num_of_items):
+    list = {}
+    for i in range(id, num_of_items + 1):
+        list[i] = build_item(i, num_of_items)
+    return list
