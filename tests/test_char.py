@@ -17,11 +17,7 @@ class CharacterAttributesTestCase(unittest.TestCase):
         """
         os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
 
-        cls.chars = {}
-        for i in range(start_id, num_of_char + 1):
-            cls.chars[i] = build_char(i, num_of_char)
-
-
+        cls.chars = char_list(start_id, num_of_char)
     def test_char_has_name(self):
 
         for i in range(start_id, num_of_char + 1):
