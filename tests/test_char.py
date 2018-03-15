@@ -10,16 +10,16 @@ class CharacterAttributesTestCase(unittest.TestCase):
     """
     Verifies all attributes of character instance
     """
-
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         """
         Uses build_char function to test character data
         """
         os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
 
-        self.chars = {}
+        cls.chars = {}
         for i in range(start_id, num_of_char + 1):
-            self.chars[i] = build_char(i, num_of_char)
+            cls.chars[i] = build_char(i, num_of_char)
 
 
     def test_char_has_name(self):

@@ -11,16 +11,16 @@ class ItemAttributesTestCase(unittest.TestCase):
     """
     Verifies all attributes of item instance
     """
-
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         """
         Uses build_item function to test item data
         """
         os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
 
-        self.items = {}
+        cls.items = {}
         for i in range(start_id, num_of_items + 1):
-            self.items[i] = build_item(i, num_of_items)
+            cls.items[i] = build_item(i, num_of_items)
 
     def test_item_has_id(self):
         for i in range(start_id, num_of_items + 1):

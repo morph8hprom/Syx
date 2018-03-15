@@ -9,7 +9,8 @@ class MapAttributesTestCase(unittest.TestCase):
     """
     Verifies all attributes of map class
     """
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         """
         Uses build_map function to create multiple room instances
         inside of the map object
@@ -17,7 +18,7 @@ class MapAttributesTestCase(unittest.TestCase):
         os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
         start_id = 1
         num_of_rooms = 5
-        self.map = Map(build_map(start_id, num_of_rooms))
+        cls.map = Map(build_map(start_id, num_of_rooms))
 
     def test_map_has_rooms(self):
         att = hasattr(self.map, 'rooms')

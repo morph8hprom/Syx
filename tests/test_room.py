@@ -15,7 +15,8 @@ class RoomAttributesTestCase(unittest.TestCase):
     """
     Contains tests for room object
     """
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         """
         Uses build map function from map.py to build multiple rooms for testing
         purposes
@@ -23,7 +24,7 @@ class RoomAttributesTestCase(unittest.TestCase):
 
         os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
 
-        self.map = Map(build_map(id, num_of_rooms))
+        cls.map = Map(build_map(id, num_of_rooms))
 
 
     def test_room_has_id(self):
@@ -78,7 +79,7 @@ class RoomAttributesTestCase(unittest.TestCase):
             self.assertTrue(att)
 
     def test_room_exits_are_dict(self):
-        
+
         for i in range(id, num_of_rooms +1):
             att = self.map.rooms[i].exits
             self.assertIsInstance(att, dict)
