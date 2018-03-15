@@ -18,9 +18,7 @@ class ItemAttributesTestCase(unittest.TestCase):
         """
         os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
 
-        cls.items = {}
-        for i in range(start_id, num_of_items + 1):
-            cls.items[i] = build_item(i, num_of_items)
+        cls.items = item_list(start_id, num_of_items)
 
     def test_item_has_id(self):
         for i in range(start_id, num_of_items + 1):
