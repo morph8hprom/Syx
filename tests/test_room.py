@@ -1,9 +1,8 @@
 #!/usr/bin/env/ python3
 
 import unittest
-from Syx.room import *
 import os
-import sys
+from Syx.room import *
 from Syx.map import *
 
 
