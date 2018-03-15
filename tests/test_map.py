@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import unittest
 import os
 from Syx.map import *
@@ -13,7 +15,14 @@ class MapAttributesTestCase(unittest.TestCase):
         inside of the map object
         """
         os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
-        self.map = Map(build_map(1, 5))
+        start_id = 1
+        num_of_rooms = 5
+        self.map = Map(build_map(start_id, num_of_rooms))
 
     def test_map_has_rooms(self):
         att = hasattr(self.map, 'rooms')
+        self.assertTrue(att)
+
+    def test_map_rooms_are_dict(self):
+        att = self.map.rooms
+        self.assertIsInstance(att, dict)
