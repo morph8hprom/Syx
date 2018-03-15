@@ -46,4 +46,4 @@ class ItemAttributesTestCase(unittest.TestCase):
     def test_item_desc_is_string(self):
         for i in range(start_id, num_of_items):
             att = self.items[i].desc
-            assertIsInstance(att, str)
+            self.assertIsInstance(att, str)
