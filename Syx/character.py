@@ -29,3 +29,9 @@ def build_char(id, num_of_chars):
         char = Character(**d)
         print("Successfully created character {} of {}".format(str(id), num_of_chars))
         return char
+
+def char_list(id, num_of_chars):
+    list = {}
+    for i in range(id, num_of_chars + 1):
+        list[i] = build_char(i, num_of_chars)
+    return list
