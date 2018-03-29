@@ -26,7 +26,8 @@ class WorldAttributeTestCase(unittest.TestCase):
         cls.map = build_map(start_id, num_of_rooms)
         cls.items = item_list(start_id, num_of_items)
         cls.chars = char_list(start_id, num_of_char)
-        cls.world = build_world(cls.map, cls.items, cls.chars)
+        cls.start_loc = 1
+        cls.world = build_world(cls.map, cls.items, cls.chars, cls.start_loc)
 
     def test_world_has_map(self):
         att = hasattr(self.world, 'map')
@@ -38,4 +39,8 @@ class WorldAttributeTestCase(unittest.TestCase):
 
     def test_world_has_chars(self):
         att = hasattr(self.world, 'chars')
+        self.assertTrue(att)
+
+    def test_world_has_start_loc(self):
+        att = hasattr(self.world, 'start_loc')
         self.assertTrue(att)

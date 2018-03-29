@@ -10,13 +10,15 @@ class World():
     def __init__(self,
         map,
         items,
-        chars):
+        chars,
+        start_loc):
         self.map = map
         self.items = items
         self.chars = chars
+        self.start_loc = start_loc
 
-def build_world(map, items, chars):
+def build_world(map, items, chars, start_loc):
     print("Building world")
-    world = World(map, items, chars)
+    world = World(map, items, chars, start_loc)
 
     return world
