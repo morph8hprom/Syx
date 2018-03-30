@@ -19,7 +19,7 @@ class WorldAttributeTestCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """
-        Uses build_world function to check world data
+        Uses build_world function to create world data
         """
         os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
 
