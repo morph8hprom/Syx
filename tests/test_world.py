@@ -21,7 +21,7 @@ class WorldAttributeTestCase(unittest.TestCase):
         """
         Uses build_world function to create world data
         """
-        os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
+        os.chdir("/home/noved/Projects/HardWay/Syx/tests")
 
         cls.map = build_map(start_id, num_of_rooms)
         cls.items = item_list(start_id, num_of_items)

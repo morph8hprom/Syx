@@ -22,7 +22,7 @@ class RoomAttributesTestCase(unittest.TestCase):
         purposes
         """
 
-        os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
+        os.chdir("/home/noved/Projects/HardWay/Syx/tests")
 
         cls.map = Map(build_map(id, num_of_rooms))
 

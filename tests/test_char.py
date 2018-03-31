@@ -15,7 +15,7 @@ class CharacterAttributesTestCase(unittest.TestCase):
         """
         Uses build_char function to test character data
         """
-        os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
+        os.chdir("/home/noved/Projects/HardWay/Syx/tests")
 
         cls.chars = char_list(start_id, num_of_char)
     def test_char_has_name(self):

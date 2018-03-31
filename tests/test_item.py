@@ -16,7 +16,7 @@ class ItemAttributesTestCase(unittest.TestCase):
         """
         Uses build_item function to test item data
         """
-        os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
+        os.chdir("/home/noved/Projects/HardWay/Syx/tests")
 
         cls.items = item_list(start_id, num_of_items)
 
