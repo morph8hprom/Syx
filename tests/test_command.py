@@ -13,7 +13,7 @@ from Syx.character import *
 start_id = 1
 num_of_rooms = 5
 num_of_items = 3
-num_of_char = 3
+num_of_chars = 3
 
 class CommandAttributesTestCase(unittest.TestCase):
     """
@@ -27,7 +27,7 @@ class CommandAttributesTestCase(unittest.TestCase):
         os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
         cls.map = build_map(start_id, num_of_rooms)
         cls.items = item_list(start_id, num_of_items)
-        cls.chars = char_list(start_id, num_of_char)
+        cls.chars = char_list(start_id, num_of_chars)
         cls.start_loc = 1
         cls.world = build_world(cls.map, cls.items, cls.chars, cls.start_loc)
         cls.cli = Command(cls.world)
@@ -49,10 +49,35 @@ class CommandFunctionsTestCase(unittest.TestCase):
         """
         Creates a temporary cmd instance for testing purposes
         """
-        os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
-        cls.map = build_map(start_id, num_of_rooms)
+        os.chdir("/home/noved/Projects/HardWay/Syx/tests")
+        cls.map = Map(build_map(start_id, num_of_rooms))
         cls.items = item_list(start_id, num_of_items)
         cls.chars = char_list(start_id, num_of_chars)
         cls.start_loc = 1
         cls.world = build_world(cls.map, cls.items, cls.chars, cls.start_loc)
         cls.cli = Command(cls.world)
+
+    def test_move_north_changes_player_loc(self):
+        player_loc_1 = self.cli.player_loc
+        self.cli.move('north')
+        player_loc_2 = self.cli.player_loc
+        self.assertNotEqual(player_loc_1, player_loc_2)
+
+    def test_move_east_changes_player_loc(self):
+        player_loc_1 = self.cli.player_loc
+        self.cli.move('south')
+        player_loc_2 = self.cli.player_loc
+        self.assertNotEqual(player_loc_1, player_loc_2)
+
+    def test_move_south_changes_player_loc(self):
+        player_loc_1 = self.cli.player_loc
+        self.cli.move('east')
+        player_loc_2 = self.cli.player_loc
+        self.assertNotEqual(player_loc_1, player_loc_2)
+
+    def test_move_west_changes_player_loc(self):
+        player_loc_1 = self.cli.player_loc
+        self.cli.move('west')
+        player_loc_2 = self.cli.player_loc
+        self.assertNotEqual(player_loc_1, player_loc_2)
+    
