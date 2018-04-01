@@ -80,4 +80,9 @@ class CommandFunctionsTestCase(unittest.TestCase):
         self.cli.move('west')
         player_loc_2 = self.cli.player_loc
         self.assertNotEqual(player_loc_1, player_loc_2)
-    
+
+    def test_move_nonsense_does_not_change_loc(self):
+        player_loc_1 = self.cli.player_loc
+        self.cli.move('nonsense')
+        player_loc_2 = self.cli.player_loc
+        self.assertEqual(player_loc_1, player_loc_2)
