@@ -40,7 +40,7 @@ class Command(Cmd):
         # Sets the variable new_room to equal the return of a function which
         # checks if dir is listed in room exits
         new_room = self.map.rooms[self.player_loc]._exits(dir)
-
+        # exit_msg = self.map.rooms[self.player_loc].exit_msg[dir]
         # Prevents changing current player location if exit is not listed
         if new_room is None:
             print("There is no exit this way")
@@ -49,3 +49,13 @@ class Command(Cmd):
             # Sets player_loc to equal the room id of the new room
             self.player_loc = new_room
             self.look()
+
+    def do_north(self):
+        self.move('north')
+
+    def do_east(self):
+        self.move('east')
+    def do_south(self):
+        self.move('south')
+    def do_west(self):
+        self.move('west')
