@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import textwrap
 from cmd2 import Cmd
 from Syx.world import *
@@ -8,11 +10,13 @@ from Syx.character import *
 
 
 class Command(Cmd):
-    def __init__(self, world):
+    def __init__(self, game):
         self.prompt = ">"
-        self.world = world
+        self.game = game
+        self.world = game.world
         self.player_loc = self.world.start_loc
         self.map = self.world.map
+
 
     def look(self):
         """
