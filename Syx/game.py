@@ -20,4 +20,18 @@ class Game():
         self.items = world.items
         self.chars = world.chars
 
-        #Add character select
+
+def build_game(world):
+    room_start_id = 1
+    num_of_rooms = 5
+    item_start_id = 1
+    num_of_items = 3
+    char_start_id = 1
+    num_of_chars = 3
+    start_loc = 1
+    map = Map(build_map(room_start_id, num_of_rooms))
+    items = item_list(item_start_id, num_of_items)
+    chars = char_list(char_start_id, num_of_chars)
+    world = build_world(map, items, chars, start_loc)
+    game = Game(world)
+    return game
