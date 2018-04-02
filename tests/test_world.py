@@ -2,11 +2,11 @@
 
 import unittest
 import os
-from Syx.world import *
-from Syx.item import *
-from Syx.character import *
-from Syx.map import *
-from Syx.room import *
+from src.world import *
+from src.item import *
+from src.character import *
+from src.map import *
+from src.room import *
 start_id = 1
 num_of_rooms = 5
 num_of_items = 3

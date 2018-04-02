@@ -2,7 +2,7 @@
 
 import unittest
 import os
-from Syx.item import *
+from src.item import *
 
 start_id = 1
 num_of_items = 3

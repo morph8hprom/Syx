@@ -3,13 +3,13 @@
 import unittest
 import os
 from cmd2 import Cmd
-from Syx.command import *
-from Syx.world import *
-from Syx.map import *
-from Syx.room import *
-from Syx.item import *
-from Syx.character import *
-from Syx.game import *
+from src.command import *
+from src.world import *
+from src.map import *
+from src.room import *
+from src.item import *
+from src.character import *
+from src.game import *
 
 start_id = 1
 num_of_rooms = 5
@@ -25,7 +25,7 @@ class CommandAttributesTestCase(unittest.TestCase):
         """
         Creates a temporary cmd instance for testing purposes
         """
-        os.chdir("/home/noved/Projects/HardWay/Syx/Syx")
+        os.chdir("/home/noved/Projects/HardWay/Syx/src")
         cls.map = build_map(start_id, num_of_rooms)
         cls.items = item_list(start_id, num_of_items)
         cls.chars = char_list(start_id, num_of_chars)

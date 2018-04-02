@@ -2,8 +2,8 @@
 
 import unittest
 import os
-from Syx.room import *
-from Syx.map import *
+from src.room import *
+from src.map import *
 
 id = 1
 num_of_rooms = 5

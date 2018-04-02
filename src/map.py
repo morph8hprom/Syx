@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from Syx.room import *
+from src.room import *
 import json
 """
 Defines a map class and a fucntion used to create an instance of map class

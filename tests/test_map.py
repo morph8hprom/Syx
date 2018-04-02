@@ -2,8 +2,8 @@
 
 import unittest
 import os
-from Syx.map import *
-from Syx.room import *
+from src.map import *
+from src.room import *
 
 class MapAttributesTestCase(unittest.TestCase):
     """

@@ -2,11 +2,11 @@
 
 import textwrap
 from cmd2 import Cmd
-from Syx.world import *
-from Syx.map import *
-from Syx.room import *
-from Syx.item import *
-from Syx.character import *
+from src.world import *
+from src.map import *
+from src.room import *
+from src.item import *
+from src.character import *
 
 
 class Command(Cmd):

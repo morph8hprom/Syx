@@ -2,7 +2,7 @@
 
 import unittest
 import os
-from Syx.character import *
+from src.character import *
 
 start_id = 1
 num_of_char = 3
