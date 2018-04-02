@@ -23,7 +23,7 @@ class WorldAttributeTestCase(unittest.TestCase):
         """
         os.chdir("/home/noved/Projects/HardWay/Syx/tests")
 
-        cls.map = build_map(start_id, num_of_rooms)
+        cls.map = Map(build_map(start_id, num_of_rooms))
         cls.items = item_list(start_id, num_of_items)
         cls.chars = char_list(start_id, num_of_char)
         cls.start_loc = 1
