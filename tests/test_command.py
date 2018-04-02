@@ -9,6 +9,7 @@ from Syx.map import *
 from Syx.room import *
 from Syx.item import *
 from Syx.character import *
+from Syx.game import *
 
 start_id = 1
 num_of_rooms = 5
@@ -30,7 +31,8 @@ class CommandAttributesTestCase(unittest.TestCase):
         cls.chars = char_list(start_id, num_of_chars)
         cls.start_loc = 1
         cls.world = build_world(cls.map, cls.items, cls.chars, cls.start_loc)
-        cls.cli = Command(cls.world)
+        cls.game = build_game(cls.world)
+        cls.cli = Command(cls.game)
 
     def test_cli_has_world(self):
         att = hasattr(self.cli, 'world')
@@ -55,7 +57,8 @@ class CommandFunctionsTestCase(unittest.TestCase):
         cls.chars = char_list(start_id, num_of_chars)
         cls.start_loc = 1
         cls.world = build_world(cls.map, cls.items, cls.chars, cls.start_loc)
-        cls.cli = Command(cls.world)
+        cls.game = build_game(cls.world)
+        cls.cli = Command(cls.game)
 
     def test_move_north_changes_player_loc(self):
         player_loc_1 = self.cli.player_loc
