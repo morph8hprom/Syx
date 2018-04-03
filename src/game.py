@@ -21,7 +21,7 @@ class Game():
         self.chars = world.chars
 
 
-def build_game(start_id, num_rooms, num_items, num_chars, start_loc, world):
+def build_game(start_id, num_rooms, num_items, num_chars, start_loc):
     start_id = 1
     start_loc = 1
     map = Map(build_map(start_id, num_rooms))
