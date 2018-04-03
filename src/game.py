@@ -21,17 +21,12 @@ class Game():
         self.chars = world.chars
 
 
-def build_game(world):
-    room_start_id = 1
-    num_of_rooms = 5
-    item_start_id = 1
-    num_of_items = 3
-    char_start_id = 1
-    num_of_chars = 3
+def build_game(start_id, num_rooms, num_items, num_chars, start_loc, world):
+    start_id = 1
     start_loc = 1
-    map = Map(build_map(room_start_id, num_of_rooms))
-    items = item_list(item_start_id, num_of_items)
-    chars = char_list(char_start_id, num_of_chars)
+    map = Map(build_map(start_id, num_rooms))
+    items = item_list(start_id, num_items)
+    chars = char_list(start_id, num_chars)
     world = build_world(map, items, chars, start_loc)
     game = Game(world)
     return game
