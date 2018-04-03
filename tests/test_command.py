@@ -15,6 +15,7 @@ start_id = 1
 num_of_rooms = 5
 num_of_items = 3
 num_of_chars = 3
+start_loc = 1
 
 class CommandAttributesTestCase(unittest.TestCase):
     """
@@ -26,12 +27,12 @@ class CommandAttributesTestCase(unittest.TestCase):
         Creates a temporary cmd instance for testing purposes
         """
         os.chdir("/home/noved/Projects/HardWay/Syx/src")
-        cls.map = build_map(start_id, num_of_rooms)
-        cls.items = item_list(start_id, num_of_items)
-        cls.chars = char_list(start_id, num_of_chars)
-        cls.start_loc = 1
-        cls.world = build_world(cls.map, cls.items, cls.chars, cls.start_loc)
-        cls.game = build_game(cls.world)
+
+
+        cls.game = build_game(start_id, num_of_rooms, num_of_items, num_of_chars, start_loc)
+        cls.map = cls.game.map
+        cls.items = cls.game.items
+        cls.chars = cls.game.chars
         cls.cli = Command(cls.game)
 
     def test_cli_has_world(self):
@@ -52,12 +53,11 @@ class CommandFunctionsTestCase(unittest.TestCase):
         Creates a temporary cmd instance for testing purposes
         """
         os.chdir("/home/noved/Projects/HardWay/Syx/tests")
-        cls.map = Map(build_map(start_id, num_of_rooms))
-        cls.items = item_list(start_id, num_of_items)
-        cls.chars = char_list(start_id, num_of_chars)
-        cls.start_loc = 1
-        cls.world = build_world(cls.map, cls.items, cls.chars, cls.start_loc)
-        cls.game = build_game(cls.world)
+
+        cls.game = build_game(start_id, num_of_rooms, num_of_items, num_of_chars, start_loc)
+        cls.map = cls.game.map
+        cls.items = cls.game.items
+        cls.chars = cls.game.chars
         cls.cli = Command(cls.game)
 
     def test_move_north_changes_player_loc(self):

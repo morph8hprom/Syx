@@ -17,5 +17,6 @@ the full game
 """
 
 if __name__ == "__main__":
-    room_start_id = 1
+    start_id = 1
+    start_loc = 1
     
