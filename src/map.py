@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from src.room import *
+from room import *
 import json
 """
 Defines a map class and a fucntion used to create an instance of map class

@@ -2,15 +2,16 @@
 
 import textwrap
 from cmd2 import Cmd
-from src.world import *
-from src.map import *
-from src.room import *
-from src.item import *
-from src.character import *
+from world import *
+from map import *
+from room import *
+
 
 
 class Command(Cmd):
     def __init__(self, game):
+        Cmd.__init__(self)
+        self._transcript_files = None
         self.prompt = ">"
         self.game = game
         self.world = game.world
@@ -54,12 +55,21 @@ class Command(Cmd):
             self.player_loc = new_room
             self.look()
 
-    def do_north(self):
+    def do_north(self, args):
         self.move('north')
 
-    def do_east(self):
+    def do_east(self, args):
         self.move('east')
-    def do_south(self):
+    def do_south(self, args):
         self.move('south')
-    def do_west(self):
+    def do_west(self, args):
         self.move('west')
+
+    def do_quit(self, args):
+        quit = input("Quit?\nYes or no\n>")
+        if quit.lower() == "yes":
+            return True
+        elif quit.lower() == 'no':
+            return False
+        else:
+            print("Input not recognized")

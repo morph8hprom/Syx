@@ -9,16 +9,12 @@ Defines a world class and a functon used to create an instance of the world clas
 class World():
     def __init__(self,
         map,
-        items,
-        chars,
         start_loc):
         self.map = map
-        self.items = items
-        self.chars = chars
         self.start_loc = start_loc
 
-def build_world(map, items, chars, start_loc):
+def build_world(map, start_loc):
     print("Building world")
-    world = World(map, items, chars, start_loc)
+    world = World(map, start_loc)
 
     return world
