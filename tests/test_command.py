@@ -7,14 +7,11 @@ from src.command import *
 from src.world import *
 from src.map import *
 from src.room import *
-from src.item import *
-from src.character import *
+
 from src.game import *
 
 start_id = 1
 num_of_rooms = 5
-num_of_items = 3
-num_of_chars = 3
 start_loc = 1
 
 class CommandAttributesTestCase(unittest.TestCase):
@@ -29,10 +26,8 @@ class CommandAttributesTestCase(unittest.TestCase):
         os.chdir("/home/noved/Projects/HardWay/Syx/tests")
 
 
-        cls.game = build_game(start_id, num_of_rooms, num_of_items, num_of_chars, start_loc)
+        cls.game = build_game(start_id, num_of_rooms, start_loc)
         cls.map = cls.game.map
-        cls.items = cls.game.items
-        cls.chars = cls.game.chars
         cls.cli = Command(cls.game)
 
     def test_cli_has_world(self):
@@ -54,10 +49,8 @@ class CommandFunctionsTestCase(unittest.TestCase):
         """
         os.chdir("/home/noved/Projects/HardWay/Syx/tests")
 
-        cls.game = build_game(start_id, num_of_rooms, num_of_items, num_of_chars, start_loc)
+        cls.game = build_game(start_id, num_of_rooms, start_loc)
         cls.map = cls.game.map
-        cls.items = cls.game.items
-        cls.chars = cls.game.chars
         cls.cli = Command(cls.game)
 
     def test_move_north_changes_player_loc(self):
