@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 setup(name = "Syx",
 version = '0.1.0',
 python_requires = '>=3',
-install_requires = ['cmd2>=0.8.2', 'gim>=0.1.0', 'upacc>=0.1.0'],
+install_requires = ['cmd2>=0.8.2', 'gim>=0.1.0', 'upacc>=0.1.0', 'bwamu>=0.1.0'],
 description = 'A text based roleplaying/adventure game',
 url = 'https://www.github.com/morph8hprom/Syx',
 author = 'Devon Blackburn',
