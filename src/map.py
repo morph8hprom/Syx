@@ -14,12 +14,6 @@ class Map():
 
 
 def build_map(id, num_of_rooms):
-
-
-
-
-
-
     rooms = {}
     for i in range(id, num_of_rooms + 1):
         try:

@@ -1,7 +1,7 @@
 #!/usr/bin/env/ python3
 from pkg_resources import resource_string
 import json
-import codecs
+
 """
 Defines a room class and a fucntion used to create an instance of room class
 """
@@ -35,13 +35,9 @@ def build_room(id):
     #     #Reads contents of file and stores in variable jsontext
     #     jsontext = x.read()
     #     #Decodes information from json file to a dictionary
-    reader = codecs.getreader('utf-8')
-    d = json.loads(resource_string(__name__, 'data/room{}.json'.format(id)).decode('utf-8'))
+    jsontext = resource_string(__name__, 'data/room{}.json'.format(id))
+    d = json.loads(jsontext.decode('utf-8'))
 
     d['id'] = id
     room = Room(**d)
     return room
-
-def test_room(id):
-    d = json.loads(resource_string(__name__, 'room{}.json'.format(id)))
-    return d
