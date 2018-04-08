@@ -15,7 +15,7 @@ class MapAttributesTestCase(unittest.TestCase):
         Uses build_map function to create multiple room instances
         inside of the map object
         """
-        os.chdir("/home/noved/Projects/HardWay/Syx/tests")
+        
         start_id = 1
         num_of_rooms = 5
         cls.map = Map(build_map(start_id, num_of_rooms))

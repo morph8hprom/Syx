@@ -23,7 +23,7 @@ class CommandAttributesTestCase(unittest.TestCase):
         """
         Creates a temporary cmd instance for testing purposes
         """
-        os.chdir("/home/noved/Projects/HardWay/Syx/tests")
+
 
 
         cls.game = build_game(start_id, num_of_rooms, start_loc)
@@ -47,7 +47,7 @@ class CommandFunctionsTestCase(unittest.TestCase):
         """
         Creates a temporary cmd instance for testing purposes
         """
-        os.chdir("/home/noved/Projects/HardWay/Syx/tests")
+
 
         cls.game = build_game(start_id, num_of_rooms, start_loc)
         cls.map = cls.game.map

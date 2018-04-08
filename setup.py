@@ -17,7 +17,7 @@ packages = find_packages('src'), package_dir = {'' : 'src'},
 include_package_data = True,
 package_data = {
 '' : ['*.txt'],
-'src' : ['data/*.json'],
+'' : ['*.json'],
 }
 
 )
