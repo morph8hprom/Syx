@@ -2,13 +2,10 @@
 
 import os
 import sys
-import json
-import textwrap
-from cmd2 import Cmd
 import bwamu
 import upacc
 import gim
-
+from Syx import command
 
 """
 Main file which takes all components and creates/runs

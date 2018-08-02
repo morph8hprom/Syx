@@ -2,21 +2,18 @@
 
 import textwrap
 from cmd2 import Cmd
-from world import *
-from map import *
-from room import *
+
 
 
 
 class Command(Cmd):
-    def __init__(self, game):
+    def __init__(self, main_map, player):
         Cmd.__init__(self)
         self._transcript_files = None
         self.prompt = ">"
-        self.game = game
-        self.world = game.world
-        self.player_loc = self.world.start_loc
-        self.map = self.world.map
+        self.map = main_map
+        self.player_loc = self.player.loc
+
 
 
     def look(self):
