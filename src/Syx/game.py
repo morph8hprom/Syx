@@ -12,6 +12,9 @@ class Game():
         self._update_constants()
         self.world = W.World(**self.constants)
         self.map = self.world.map
+        self.items = self.world.items
+        self.characters = self.world.characters
+
 
 
 
