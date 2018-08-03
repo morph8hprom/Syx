@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 
 import json
-import bwamu
-import gim
-import upacc
+from pkg_resources import resource_string
+from bwamu import world as W
+
 
 
 class Game():
-    def __init__(self, world):
-        self.world = world
+    def __init__(self):
         self.constants = {}
+        self._update_constants()
+        self.world = W.World(**self.constants)
+        self.map = self.world.map
+
+
 
     def _update_constants(self):
         d = {}
