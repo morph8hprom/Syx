@@ -7,12 +7,13 @@ from cmd2 import Cmd
 
 
 class Command(Cmd):
-    def __init__(self, main_map, player):
+    def __init__(self, game):
         Cmd.__init__(self)
         self._transcript_files = None
         self.prompt = ">"
-        self.map = main_map
-        self.player_loc = self.player.loc
+        self.game = game
+        self.map = game.world.map
+        self.player_loc = game.player_loc
 
 
 
