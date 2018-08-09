@@ -11,14 +11,14 @@ File used to define Game class and it's methods
 
 class Game():
     def __init__(self, player):
-        self.constants = {}
+        self._constants = {}
         self._update_constants()
-        self.world = W.World(**self.constants)
-        self.map = self.world.map
-        self.items = self.world.items
-        self.characters = self.world.characters
-        self.player = player
-        self.player_loc = None
+        self._world = W.World(**self._constants)
+        self._map = self._world._map
+        self._items = self._world._items
+        self._characters = self._world._characters
+        self._player = player
+        self._player_loc = None
         self._update_player_loc()
 
 
@@ -29,10 +29,10 @@ class Game():
         d = {}
         jsontext = resource_string(__name__, 'data/game_constants.json')
         d = json.loads(jsontext.decode('utf-8'))
-        self.constants = d
+        self._constants = d
 
     def _update_player_loc(self):
-        if self.player.loc is not None:
-            self.player_loc = self.player.loc
+        if self._player._loc is not None:
+            self._player_loc = self._player._loc
         else:
-            self.player_loc = self.world.START_LOC
+            self._player_loc = self._world.START_LOC
